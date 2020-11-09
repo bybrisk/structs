@@ -1,6 +1,10 @@
 package structs
 
-import "go.mongodb.org/mongo-driver/bson/primitive"
+import ( 
+	"go.mongodb.org/mongo-driver/bson/primitive"
+	"encoding/json"
+	"log"
+)
 
 type ConnectToDataBase struct {
 	CustomApplyURI string 
@@ -81,4 +85,14 @@ type DeliveredDetail struct {
 type DeliveredAndAccount struct {
 	DeliveredDetails []DeliveredDetail `json:"deliveryDetails"`
 	BusinessAccount *BusinessAccount `json:"businessAccount"`
+}
+
+func ByteToJsonInterface(load string) map[string]interface{} {
+	var loadArr = []byte(load)
+    var loadToJson map[string]interface{}
+    err := json.Unmarshal(loadArr, &loadToJson)
+    if (err != nil) {
+		log.Fatal(err)
+	}
+	return loadToJson
 }

@@ -87,7 +87,7 @@ type DeliveredAndAccount struct {
 	BusinessAccount *BusinessAccount `json:"businessAccount"`
 }
 
-var connectDBInfo *ConnectToDataBase = &ConnectToDataBase{
+var ConnectDBInfo *ConnectToDataBase = &ConnectToDataBase{
 	CustomApplyURI:"mongodb://shashank404error:Y9ivXgMQ5ZrjL4N@parkpoint-shard-00-00.0bxqn.mongodb.net:27017,parkpoint-shard-00-01.0bxqn.mongodb.net:27017,parkpoint-shard-00-02.0bxqn.mongodb.net:27017/parkpoint?ssl=true&replicaSet=atlas-21pobg-shard-0&authSource=admin&retryWrites=true&w=majority", 
 	DatabaseName:"parkpoint",  
 }

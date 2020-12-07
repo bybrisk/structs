@@ -11,6 +11,14 @@ type ConnectToDataBase struct {
 	DatabaseName string 
 }
 
+type DeliveryConfig struct{
+	BybriskDelivery bool `json: "bybriskDelivery"`
+	DeliveryAgent int64 `json: "deliveryAgents"`
+	AvgWorkingHours int64 `json: "avgWorkingHours"`
+	InstantDelivery bool `json: "instantDelivery"`
+	AutoScaling bool `json: "autoScaling"`
+}
+
 type DeliveryDetail struct {
 	ID int `json:"id"`
 	deliveryID string `json:"deliveryid"`
